@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<meta charset="utf-8">
+	<title>深呼吸，聆听雨声，让一切回归平静。</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="可以让你放松心情的白噪音">
+	<link href="http://cdn.bootcss.com/normalize/3.0.3/normalize.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/intro.js/1.0.0/introjs.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+	html{
+		font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+		box-sizing: border-box;
+	}
+	.container{
+	margin:0 auto;
+	}
+	.has-background{
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/11.jpg');
+		overflow: hidden;
+		height: 2048px;
+	}
+	.ctl{
+		text-align: center;
+		padding: 1px;
+		overflow: hidden;
+	}
+	.ctl ul{
+		list-style: none;
+		margin:0;
+		padding:0;
+		margin-bottom: 20px;
+	}
+	.ctl ul li {
+		display: inline-block;
+		margin-right: 20px;
+
+	}
+	.ctl li i{
+		color: white;
+		cursor: pointer;
+		border:3px solid white;
+		border-radius:9999px;
+		width:50px;
+		height:50px;
+		padding: 8px;
+	}
+	.ctl li i.gray{
+		color:#eee;
+		border:3px solid #eee;
+		box-shadow: inset 0px 0px 30px #fff;
+		opacity: 0.8;
+	}
+	.sound-ctl{
+		font-size: 26px;
+	}
+	.screen-ctl{
+		font-size: 26px;
+	}
+	.change-skin{
+		font-size: 26px;
+	}
+	.intro-start{
+		font-size: 26px;
+	}
+	.f26{
+		font-size: 26px;
+	}
+	.mt20{
+		margin-top: 20px;
+	}
+	.introjs-helperNumberLayer{
+		width:28px;
+		height:28px;
+	}
+	h1{
+		color:white;
+		font-weight: normal;
+		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 60px;
+		line-height: 35px;
+	}
+	@media (max-width: 480px) {
+		h1{
+			font-size:26px;
+			line-height: 35px;
+		}
+	}
+	@media (max-width: 768px) {
+		h1{
+		font-size:26px;
+		line-height: 35px;
+		}
+
+	}
+</style>
+
+<body class="has-background">
+<div class="container">
+	<audio src='http://7xiqni.com1.z0.glb.clouddn.com/tjk_rain.m4a'  autoplay="autoplay" loop="loop" id="audio"></audio>
+	<audio src='http://cdn.tuijiankan.com/train.mp3' loop="loop" id="train"></audio>
+	<audio src='http://cdn.tuijiankan.com/beach-wind.mp3' loop="loop" id="bleach"></audio>
+	<audio src='http://cdn.tuijiankan.com/shower.mp3' loop="loop" id="shower"></audio>
+	<div class="row mt20">
+		<div class="col-md-12 col-sm-12 col-xs-12"><h1>深呼吸，聆听雨声，让一切回归平静。</h1></div>
+	  	<div class="col-md-12 col-sm-12 col-xs-12">
+	  		<div class="ctl">
+				<ul>
+					<li><i class="fa fa-volume-up sound-ctl" data-step="1" data-intro="点击图标暂停或继续播放背景音，支持空格键操作。可以按下空格键试试。点 Next 看下一个功能介绍。" data-position="left"></i></li>
+
+					<li><i class="fa fa-subway f26 train-ctl gray" data-step="2" data-intro="火车开动背景音" data-position="left"></i></li>
+
+					<li><i class="fa fa-forumbee f26 bleach-ctl gray" data-step="3" data-intro="海滩的风声和水声。" data-position="left"></i></li>
+
+					<li><i class="fa fa-leaf f26 shower-ctl gray" data-step="4" data-intro="淋浴流水的声音" data-position="left"></i></li>
+
+				</ul>	
+				<ul>
+					<li><i class="fa fa-arrows-alt screen-ctl" data-step="5" data-intro="点击切换全屏或正常模式。" data-position="left"></i></li>
+					<li><i class="fa fa-magic change-skin" data-step="6" data-intro="点击切换背景皮肤，支持键盘左右方向键切换。" data-position="left"></i></li>
+					
+					<li><a href="/" target="_blank"><i class="fa fa-home f26" data-step="7" data-intro="点击返回乔木玩具网" data-position="left"></i></a></li>
+					
+					<li><a href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question intro-start"></i></a></li>	
+				</ul>
+			</div>
+	  	</div>
+	</div>
+	
+
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/keymaster/1.6.1/keymaster.min.js"></script>
+<script src="http://cdn.bootcss.com/intro.js/1.0.0/intro.min.js"></script>
+<script>
+	$(function(){
+		function launchFullscreen(element) {
+		  if(element.requestFullscreen) {
+		    element.requestFullscreen();
+		  } else if(element.mozRequestFullScreen) {
+		    element.mozRequestFullScreen();
+		  } else if(element.webkitRequestFullscreen) {
+		    element.webkitRequestFullscreen();
+		  } else if(element.msRequestFullscreen) {
+		    element.msRequestFullscreen();
+		  }
+		}
+
+		function exitFullscreen() {
+		  if(document.exitFullscreen) {
+		    document.exitFullscreen();
+		  } else if(document.mozCancelFullScreen) {
+		    document.mozCancelFullScreen();
+		  } else if(document.webkitExitFullscreen) {
+		    document.webkitExitFullscreen();
+		  }
+		}
+
+		var i = 2;
+		key('right', function(){
+			i++;
+			if(i === 185){
+				i = i - 184;
+				$('.has-background').css('background-image','url(https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/'+ i +'.jpg)');
+			}else{
+				$('.has-background').css('background-image','url(https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/'+ i +'.jpg)');
+			}
+		});
+		key('left', function(){
+			i--;
+			if(i === 0){
+				i = i + 184;
+			}else{
+				$('.has-background').css('background-image','url(https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/'+ i +'.jpg)');
+			}
+			
+		});
+		
+
+		$('#full-screen').click(function(){
+			launchFullscreen(document.documentElement); 
+		});
+		var num = parseInt(Math.random()*73+1,10);
+		var imgUrl = 'url(https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/'+ num +'.jpg)';
+		var photoNum = 1;
+		$('.change-skin').on('click',function(){
+			photoNum++;
+			$('.has-background').css('background-image','url(https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/'+ photoNum +'.jpg)');
+			
+		});
+		$('.has-background').css('background-image',imgUrl);
+
+		var hasSound = 1;
+		var audioplayer = document.getElementById("audio");
+		// var audioplayer-bleach = document.getElementById("bleach");
+		$('.sound-ctl').click(function(){
+			if(hasSound == 1){
+				$(this).addClass('gray');
+				hasSound = 0;
+				audioplayer.pause();
+			}else if(hasSound == 0){
+				$(this).removeClass('gray');
+				hasSound = 1;
+				audioplayer.play();
+			}
+			
+		});
+		var trainSound = 1;
+		var audioplayerTrain = document.getElementById("train");
+		$('.train-ctl').click(function(){
+			if(trainSound == 1){
+				$(this).removeClass('gray');
+				trainSound = 0;
+				audioplayerTrain.play();
+			}else if(trainSound == 0){
+				$(this).addClass('gray');
+				trainSound = 1;
+				audioplayerTrain.pause();
+			}
+			
+		});
+		var bleachSound = 1;
+		var audioplayerBleach = document.getElementById("bleach");
+		$('.bleach-ctl').click(function(){
+			if(bleachSound == 1){
+				$(this).removeClass('gray');
+				bleachSound = 0;
+				audioplayerBleach.play();
+			}else if(bleachSound == 0){
+				$(this).addClass('gray');
+				bleachSound = 1;
+				audioplayerBleach.pause();
+			}
+			
+		});
+		var showerSound = 1;
+		var audioplayerShower = document.getElementById("shower");
+		$('.shower-ctl').click(function(){
+			if(showerSound == 1){
+				$(this).removeClass('gray');
+				showerSound = 0;
+				audioplayerShower.play();
+			}else if(showerSound == 0){
+				$(this).addClass('gray');
+				showerSound = 1;
+				audioplayerShower.pause();
+			}
+		});
+		key('space', function(){
+			if(hasSound == 1){
+				audioplayer.pause();
+				hasSound = 0;
+			}else if(hasSound == 0){
+				audioplayer.play();
+				hasSound = 1;
+			}
+		});
+		var isFullsreen = 0;
+		$('.screen-ctl').click(function(){
+			if(isFullsreen == 0){
+				$(this).removeClass('fa-arrows-alt');
+				$(this).addClass('fa-compress');
+				isFullsreen = 1;
+				launchFullscreen(document.documentElement); 
+			}else if(isFullsreen == 1){
+				$(this).removeClass('fa-compress');
+				$(this).addClass('fa-arrows-alt');
+				isFullsreen = 0;
+				exitFullscreen();
+			}
+		});
+	});
+</script>
+</body>
+</html>
